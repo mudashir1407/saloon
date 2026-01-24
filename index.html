@@ -167,18 +167,22 @@
 </section>
 
 <!-- Booking Section -->
+<!-- Booking Section -->
 <section id="booking" class="py-5 bg-light">
   <div class="container">
     <h2 class="text-center mb-4">Book an Appointment</h2>
     <form class="mx-auto" style="max-width:600px;">
+      
       <div class="mb-3">
         <label for="name" class="form-label">Full Name</label>
         <input type="text" class="form-control" id="name" required>
       </div>
+      
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" required>
       </div>
+      
       <div class="mb-3">
         <label for="service" class="form-label">Service</label>
         <select class="form-select" id="service" required>
@@ -189,10 +193,15 @@
           <option>Lashes & Spa</option>
         </select>
       </div>
+      
       <div class="mb-3">
         <label for="date" class="form-label">Preferred Date</label>
         <input type="date" class="form-control" id="date" required>
       </div>
+
+      <!-- Message div -->
+      <div id="bookingMessage" class="mt-3"></div>
+
       <button type="submit" class="btn btn-primary w-100">Book Now</button>
     </form>
   </div>
