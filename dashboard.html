@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+
+<h2>Bookings</h2>
+<div id="bookings"></div>
+
+<script>
+if (!localStorage.getItem("admin")) {
+  window.location.href = "admin.html";
+}
+
+fetch("https://saloon-backend-plfu.onrender.com/api/bookings")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("bookings").innerHTML =
+      data.map(b => `
+        <p>
+          <strong>${b.name}</strong> - ${b.service} - ${b.date}
+        </p>
+      `).join("");
+  });
+</script>
+
+</body>
+</html>
