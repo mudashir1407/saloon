@@ -15,7 +15,7 @@
 
 <script>
 /* 🔐 Protect dashboard */
-if (!localStorage.getItem("isAdmin")) {
+if (!localStorage.getItem("admin")) {
   alert("Unauthorized access");
   window.location.href = "admin.html";
 }
@@ -24,26 +24,38 @@ if (!localStorage.getItem("isAdmin")) {
 fetch("https://saloon-backend-plfu.onrender.com/api/bookings")
   .then(res => res.json())
   .then(data => {
-    if (data.length === 0) {
-      document.getElementById("bookings").innerHTML =
-        "<p>No bookings yet</p>";
-      return;
-    }
-
     document.getElementById("bookings").innerHTML =
       data.map(b => `
-        <div style="background:#fff; padding:10px; margin-bottom:10px; border-radius:5px;">
-          <strong>Name:</strong> ${b.name}<br>
-          <strong>Email:</strong> ${b.email}<br>
-          <strong>Service:</strong> ${b.service}<br>
-          <strong>Date:</strong> ${new Date(b.date).toDateString()}
+        <div style="
+          background:white;
+          padding:15px;
+          margin-bottom:15px;
+          border-radius:8px;
+          box-shadow:0 2px 5px rgba(0,0,0,0.1);
+        ">
+          <h4>${b.name}</h4>
+          <p><b>Service:</b> ${b.service}</p>
+          <p><b>Date:</b> ${new Date(b.date).toDateString()}</p>
+          <p><b>Time:</b> ${b.time}</p>
+          <p><b>Status:</b> 
+            <span style="color:${b.status === "Completed" ? "green" : "orange"}">
+              ${b.status}
+            </span>
+          </p>
+
+          <button onclick="markCompleted('${b._id}')"
+            style="padding:8px 12px; background:green; color:white; border:none; border-radius:5px;">
+            ✅ Complete
+          </button>
+
+          <button onclick="deleteBooking('${b._id}')"
+            style="padding:8px 12px; background:red; color:white; border:none; border-radius:5px;">
+            ❌ Delete
+          </button>
         </div>
       `).join("");
-  })
-  .catch(() => {
-    document.getElementById("bookings").innerHTML =
-      "<p style='color:red'>Failed to load bookings</p>";
   });
+
 </script>
 
 </body>

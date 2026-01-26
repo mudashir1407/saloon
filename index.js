@@ -7,7 +7,9 @@ document.querySelector("#booking form").addEventListener("submit", async functio
       name: document.getElementById("name").value,
       email: document.getElementById("email").value,
       service: document.getElementById("service").value,
-      date: document.getElementById("date").value
+      date: document.getElementById("date").value,
+      time: document.getElementById("time").value
+
     };
   
     try {
@@ -32,3 +34,22 @@ document.querySelector("#booking form").addEventListener("submit", async functio
     }
   });
   
+/* ✅ Mark booking as completed */
+function markCompleted(id) {
+  fetch(`https://saloon-backend-plfu.onrender.com/api/bookings/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ status: "Completed" })
+  })
+    .then(() => location.reload());
+}
+
+/* ❌ Delete booking */
+function deleteBooking(id) {
+  if (confirm("Are you sure you want to delete this booking?")) {
+    fetch(`https://saloon-backend-plfu.onrender.com/api/bookings/${id}`, {
+      method: "DELETE"
+    })
+      .then(() => location.reload());
+  }
+}
