@@ -34,22 +34,3 @@ document.querySelector("#booking form").addEventListener("submit", async functio
     }
   });
   
-/* ✅ Mark booking as completed */
-function markCompleted(id) {
-  fetch(`https://saloon-backend-plfu.onrender.com/api/bookings/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ status: "Completed" })
-  })
-    .then(() => location.reload());
-}
-
-/* ❌ Delete booking */
-function deleteBooking(id) {
-  if (confirm("Are you sure you want to delete this booking?")) {
-    fetch(`https://saloon-backend-plfu.onrender.com/api/bookings/${id}`, {
-      method: "DELETE"
-    })
-      .then(() => location.reload());
-  }
-}
