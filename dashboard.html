@@ -50,7 +50,7 @@ fetch("https://saloon-backend-plfu.onrender.com/api/bookings")
 
           <button onclick="deleteBooking('${b._id}')"
             style="padding:8px 12px; background:red; color:white; border:none; border-radius:5px;">
-            ❌ Delete
+           ❌ Delete
           </button>
         </div>
       `).join("");
@@ -58,24 +58,58 @@ fetch("https://saloon-backend-plfu.onrender.com/api/bookings")
 
 
 /* ✅ Mark booking as completed */
-function markCompleted(id) {
-  fetch(`https://saloon-backend-plfu.onrender.com/api/bookings/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ status: "Completed" })
-  })
-    .then(() => location.reload());
-}
+async function markCompleted(id) {
+  try {
+    const res = await fetch(
+      `https://saloon-backend-plfu.onrender.com/api/bookings/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ status: "Completed" })
+      }
+    );
 
-/* ❌ Delete booking */
-function deleteBooking(id) {
-  if (confirm("Are you sure you want to delete this booking?")) {
-    fetch(`https://saloon-backend-plfu.onrender.com/api/bookings/${id}`, {
-      method: "DELETE"
-    })
-      .then(() => location.reload());
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("✅ Booking marked as Completed!");
+      location.reload();
+    } else {
+      alert("❌ Failed: " + data.error);
+    }
+  } catch (err) {
+    alert("❌ Server error, try again");
   }
 }
+
+
+/* ❌ Delete booking */
+async function deleteBooking(id) {
+  if (!confirm("Are you sure you want to delete this booking?")) return;
+
+  try {
+    const res = await fetch(
+      `https://saloon-backend-plfu.onrender.com/api/bookings/${id}`,
+      {
+        method: "DELETE"
+      }
+    );
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("✅ Booking deleted!");
+      location.reload();
+    } else {
+      alert("❌ Delete failed: " + data.error);
+    }
+  } catch (err) {
+    alert("❌ Server not responding");
+  }
+}
+
 </script>
 
 </body>
