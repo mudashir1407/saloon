@@ -132,7 +132,7 @@
   ========================= */
   .card {
     border: none;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
@@ -143,12 +143,16 @@
   }
   
   .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
-  
+  .card-body{
+    padding: 25px;
+  }
+
   .card-title {
     font-weight: 600;
+    font: 700;
     margin-bottom: 10px;
   }
   
@@ -156,11 +160,12 @@
      GALLERY
   ========================= */
   #gallery img {
+    border-radius: 20px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
   
   #gallery img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   }
   
@@ -169,15 +174,16 @@
   ========================= */
   #booking form {
     background: #fff;
-    padding: 40px;
-    border-radius: 15px;
+    padding: 50px;
+    border-radius: 255px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
   
   .form-control,
   .form-select {
-    border-radius: 10px;
-    padding: 12px;
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid #ddd;
   }
   
   .form-control:focus,
@@ -190,9 +196,9 @@
   .btn-primary {
     background: #d4af37;
     border: none;
-    font-weight: 600;
-    padding: 12px;
-    border-radius: 10px;
+    font-weight: 200;
+    padding: 10px;
+    border-radius: 20px;
     transition: background 0.3s ease, transform 0.3s ease;
   }
   
@@ -203,7 +209,10 @@
 
   /* =========================
    WHATSAPP FLOATING BUTTON
-========================= */
+========================= 
+
+
+
 .whatsapp-float {
 
     position: fixed;
@@ -227,6 +236,28 @@
     transform: scale(1.1);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     color: #fff;
+  }
+  */
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #25d366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transition: 0.3s;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.12);
   }
   
   /* Small screens */
@@ -291,6 +322,18 @@
     font-weight: 600;
     margin-bottom: 10px;
   }
+  #contact .col-md-4 {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-bottom: 15px;
+    transition: 0.3s;
+  }
+  
+  #contact .col-md-4:hover {
+    transform: translateY(-6px);
+  }
   
   #contact p {
     color: #555;
@@ -300,9 +343,11 @@
      FOOTER
   ========================= */
   footer {
-    background: #b8962e;
-    font-size: 0.9rem;
+    background: #111;
+    color: #d4af37;
+    font-weight: 500;
   }
+  
   
   /* =========================
      ANIMATIONS
