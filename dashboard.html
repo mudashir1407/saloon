@@ -100,8 +100,9 @@ async function deleteBooking(id) {
     const data = await res.json();
 
     if (res.ok) {
-      alert("✅ Booking deleted!");
-      location.reload();
+      
+  alert("Booking deleted successfully!");
+  location.reload();
     } else {
       alert("❌ Delete failed: " + data.error);
     }
