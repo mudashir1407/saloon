@@ -3,19 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Salon & Spa | Ilorin</title>
+  <title>Mudash Salon & Spa | Ilorin</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- Favicon -->
+  <link rel="icon" href="https://res.cloudinary.com/dkuptoepl/image/upload/v1770710970/my_logo_eyo2e3.png" type="image/png">
+  
+  
 </head>
 <body>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="#">Salon & Spa</a>
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img 
+        src="https://res.cloudinary.com/dkuptoepl/image/upload/v1770710970/my_logo_eyo2e3.png" 
+        alt="Mudash Salon & Spa Logo"
+        style="height:50px; margin-right:10px;"
+      />
+      <span>Mudash Salon & Spa</span>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,44 +45,42 @@
 <!-- Hero Section -->
 <section id="home">
   <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    
     <div class="carousel-inner">
 
       <div class="carousel-item active" style="background-image: url('images/1.jpg');">
-        <div class="overlay">
-          <h1 class="display-4 fw-bold">Welcome to Salon & Spa</h1>
-          <p class="lead">Luxury Unisex Salon in Ilorin</p>
+        <div class="overlay text-center">
+          <img src="https://res.cloudinary.com/dkuptoepl/image/upload/v1770710970/my_logo_eyo2e3.png" alt="Mudash Salon & Spa Logo" style="max-width:120px; margin-bottom:15px;">
+          <h1 class="display-4 fw-bold hero-text">Welcome to Mudash Salon & Spa</h1>
+          <p class="lead hero-text"></p>Luxury Unisex Salon in Ilorin</p>
           <a href="#booking" class="btn btn-primary btn-lg">Book an Appointment</a>
         </div>
       </div>
 
       <div class="carousel-item" style="background-image: url('images/2.jpg');">
-        <div class="overlay">
-          <h1 class="display-4 fw-bold">Beauty. Style. Confidence.</h1>
-          <p class="lead">Braids • Nails • Lashes • Spa</p>
+        <div class="overlay text-center">
+          <h1 class="display-4 fw-bold hero-text">Beauty. Style. Confidence.</h1>
+          <p class="lead hero-text">Braids • Nails • Lashes • Spa</p>
           <a href="#booking" class="btn btn-primary btn-lg">Book Now</a>
         </div>
       </div>
 
       <div class="carousel-item" style="background-image: url('images/3.jpg');">
-        <div class="overlay">
-          <h1 class="display-4 fw-bold">Professional Care</h1>
-          <p class="lead">Experience luxury like never before</p>
+        <div class="overlay text-center">
+          <h1 class="display-4 fw-bold hero-text">Professional Care</h1>
+          <p class="lead hero-text">Experience luxury like never before</p>
           <a href="#services" class="btn btn-primary btn-lg">Our Services</a>
         </div>
       </div>
 
     </div>
-
   </div>
 </section>
-
 
 <!-- About Section -->
 <section id="about" class="py-5">
   <div class="container">
     <h2 class="text-center mb-4">About Us</h2>
-    <p class="text-center"> Salon & Spa is the No.1 luxury salon in Ilorin, providing top-notch hair, beauty, and spa services. Our goal is to make you look and feel amazing.</p>
+    <p class="text-center">Mudash Salon & Spa is the No.1 luxury salon in Ilorin, providing top-notch hair, beauty, and spa services. Our goal is to make you look and feel amazing.</p>
   </div>
 </section>
 
@@ -94,12 +102,11 @@
         <div class="card h-100">
           <img src="images/nails.jpg" class="card-img-top" alt="Nails">
           <div class="card-body">
-            <h5 class="card-title">pedicure</h5>
+            <h5 class="card-title">Pedicure</h5>
             <p class="card-text">Manicure, pedicure, and nail art to perfection.</p>
           </div>
         </div>
       </div>
-
       <div class="col-md-4 mb-3">
         <div class="card h-100">
           <img src="images/56.jpg" class="card-img-top" alt="Lashes">
@@ -118,72 +125,26 @@
   <div class="container">
     <h2 class="text-center mb-4">Gallery</h2>
     <div class="row g-3">
-      <div class="col-md-4"><img src="images/1.jpg" class="img-fluid rounded" alt="Gallery"></div>
-      <div class="col-md-4"><img src="images/2.jpg" class="img-fluid rounded" alt="Gallery"></div>
-      <div class="col-md-4"><img src="images/3.jpg" class="img-fluid rounded" alt="Gallery"></div>
+      <div class="col-md-4"><img src="images/1.jpg" class="img-fluid rounded gallery-img" alt="Gallery"></div>
+      <div class="col-md-4"><img src="images/2.jpg" class="img-fluid rounded gallery-img" alt="Gallery"></div>
+      <div class="col-md-4"><img src="images/3.jpg" class="img-fluid rounded gallery-img" alt="Gallery"></div>
     </div>
   </div>
 </section>
 
-
-<!-- Instagram Section -->
-<section id="instagram" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-2">Follow Us on Instagram</h2>
-    <p class="text-center mb-4">@mudash</p>
-
-    <div class="row g-3">
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="insta-box">
-          <img src="images/insta1.jpg" alt="Instagram post">
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="insta-box">
-          <img src="images/insta2.jpg" alt="Instagram post">
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="insta-box">
-          <img src="images/insta3.jpg" alt="Instagram post">
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="insta-box">
-          <img src="images/insta4.jpg" alt="Instagram post">
-        </div>
-      </div>
-    </div>
-
-    <div class="text-center mt-4">
-      <a
-        href="https://www.instagram.com//"
-        target="_blank"
-        class="btn btn-dark btn-lg"
-      >
-        View Instagram
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Booking Section -->
 <!-- Booking Section -->
 <section id="booking" class="py-5 bg-light">
   <div class="container">
     <h2 class="text-center mb-4">Book an Appointment</h2>
     <form class="mx-auto" style="max-width:600px;">
-      
       <div class="mb-3">
         <label for="name" class="form-label">Full Name</label>
         <input type="text" class="form-control" id="name" required>
       </div>
-      
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" required>
       </div>
-      
       <div class="mb-3">
         <label for="service" class="form-label">Service</label>
         <select class="form-select" id="service" required>
@@ -194,25 +155,19 @@
           <option>Lashes & Spa</option>
         </select>
       </div>
-      
       <div class="mb-3">
         <label for="date" class="form-label">Preferred Date</label>
         <input type="date" class="form-control" id="date" required>
       </div>
-      
       <div class="mb-3">
         <label for="time" class="form-label">Preferred Time</label>
         <input type="time" class="form-control" id="time" required>
       </div>
-      
-      <!-- Message div -->
       <div id="bookingMessage" class="mt-3"></div>
-
       <button type="submit" class="btn btn-primary w-100">Book Now</button>
     </form>
   </div>
 </section>
-
 
 <!-- Contact Section -->
 <section id="contact" class="py-5">
@@ -229,43 +184,24 @@
       </div>
       <div class="col-md-4">
         <h5>Email</h5>
-        <p>mudashirsakariyah@gmail.com</p>
+        <p>mudashirsakariyah2019@gmail.com</p>
       </div>
     </div>
-    <!-- WhatsApp Floating Button -->
-<!-- WhatsApp Button -->
-<a href="https://wa.me/2348100000000?text=Hi%20I%20want%20to%20book"
-   target="_blank"
-   class="whatsapp-float">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-        width="35">
-</a>
-
-<!-- Google Map Button
-<div class="mt-4 rounded overflow-hidden shadow">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.123..."
-    width="100%"
-    height="300"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy">
-  </iframe>
-</div> -->
-<a href="https://wa.me/2347015507655"
-   target="_blank"
-   class="whatsapp-float">
-   <i class="bi bi-whatsapp"></i>
-</a>
-
-
-    
+  </div>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/2347015507655?text=Hi%20I%20want%20to%20book"
+     target="_blank"
+     class="whatsapp-float">
+     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+          width="35">
+  </a>
 </section>
 
 <!-- Footer -->
-<footer class=" text-white text-center py-3">
-  &copy; 2026 Salon & Spa. All rights reserved.
+<footer class="text-white text-center py-3" style="background:#000;">
+  &copy; 2026 Mudash Salon & Spa. All rights reserved.
 </footer>
+
 <script src="index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

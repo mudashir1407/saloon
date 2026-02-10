@@ -16,6 +16,7 @@
     background: #fdfcf9;
     color: #222;
     line-height: 1.7;
+    
   }
   
   
@@ -95,7 +96,27 @@
   #heroCarousel a {
     animation: fadeUp 1.6s ease;
   }
-  
+  /* Hero animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-text {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+.hero-btn {
+  animation: fadeInUp 1.5s ease forwards;
+  opacity: 0;
+}
   /* =========================
      SECTIONS
   ========================= */
@@ -155,7 +176,11 @@
     font: 700;
     margin-bottom: 10px;
   }
-  
+
+  .btn:hover, .card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
   /* =========================
      GALLERY
   ========================= */
@@ -167,6 +192,16 @@
   #gallery img:hover {
     transform: scale(1.08);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  .gallery-img {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+  }
+  
+  .gallery-img.show {
+    opacity: 1;
+    transform: scale(1);
   }
   
   /* =========================

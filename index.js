@@ -34,3 +34,28 @@ document.querySelector("#booking form").addEventListener("submit", async functio
     }
   });
   
+  //service
+  const serviceCards = document.querySelectorAll('.service-card');
+  
+  window.addEventListener('scroll', () => {
+    serviceCards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 100){
+        card.classList.add('show');
+      }
+    });
+  });
+  
+
+  //gallery
+  
+const galleryImgs = document.querySelectorAll('.gallery-img');
+
+window.addEventListener('scroll', () => {
+  galleryImgs.forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      img.classList.add('show');
+    }
+  });
+});
